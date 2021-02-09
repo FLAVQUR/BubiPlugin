@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-bubi" version="0.0.1">
+    <name>BubiPlugin</name>
+
+    <description>An Android Cordova plugin that allows users to scan cards.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,bubi</keywords>
+    <repo>https://github.com/FLAVQUR/BubiPlugin.git</repo>
+    <issue>https://github.com/FLAVQUR/BubiPlugin/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/bubiplugin.js" name="bubiPlugin">
+        <clobbers target="window.plugins.cordova.bubiplugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BubiPlugin">
+                <param name="android-package" value="com.intsig.cordova.plugin.BubiPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/BubiPlugin.java" target-dir="src/com/intsig/cordova/plugin" />
+    </platform>
+</plugin>
